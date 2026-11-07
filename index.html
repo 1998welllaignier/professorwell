@@ -63,7 +63,14 @@ header.nav.sombra{border-color:var(--borda)}
 .hero-ilu{position:relative}
 .hero-foto{margin:0;border-radius:28px;overflow:hidden;border:6px solid #fff;box-shadow:0 8px 0 #f97316,0 24px 40px -18px rgba(30,58,138,.45);transform:rotate(1.5deg)}
 .hero-foto img{display:block;width:100%;height:auto}
-.hero-selo{position:absolute;left:-14px;bottom:18px;background:#fff;border-radius:14px;padding:8px 14px;font-weight:700;color:#1e3a8a;box-shadow:0 6px 18px rgba(30,58,138,.18);font-size:14px}
+.hero-ic{position:absolute;width:54px;height:54px;border-radius:50%;background:#fff;display:grid;place-items:center;font-size:26px;box-shadow:0 6px 16px rgba(30,58,138,.18);border:2px solid #e7e2d6;z-index:2}
+.hero-ic{position:absolute;width:54px;height:54px;border-radius:50%;background:#fff;display:grid;place-items:center;font-size:26px;box-shadow:0 6px 16px rgba(30,58,138,.18);border:2px solid #e7e2d6;z-index:2}
+.hero-ilu .flutua2{animation-delay:-1.5s}
+.hero-selo{z-index:3}
+.hero-ic.i1{left:-26px;top:-22px}.hero-ic.i2{left:28%;top:-30px}.hero-ic.i3{left:-38px;top:42%}.hero-ic.i4{right:-30px;top:62%}.hero-ic.i5{right:-22px;bottom:-26px}.hero-ic.i6{left:46%;bottom:-34px}.hero-ic.i7{right:30%;bottom:-30px}
+.hero-ic.txt{font-weight:800;color:#2563eb;font-size:18px}
+.hero-ilu .flutua2{animation-delay:-1.5s}
+.hero-selo{z-index:3;position:absolute;left:-14px;bottom:18px;background:#fff;border-radius:14px;padding:8px 14px;font-weight:700;color:#1e3a8a;box-shadow:0 6px 18px rgba(30,58,138,.18);font-size:14px}
 .hero-selo.s2{left:auto;right:-10px;top:14px;bottom:auto;color:#c2410c}
 .hero-ilu svg{width:100%;height:auto;display:block;filter:drop-shadow(0 24px 30px rgba(30,58,138,.18))}
 .flutua{animation:flutua 5s ease-in-out infinite}
@@ -182,7 +189,9 @@ footer .prof{display:inline-flex;align-items:center;gap:8px;border:1px solid rgb
   .hero{padding:24px 0 60px}
   .hero .cx,#professor .cx,.contato{grid-template-columns:1fr}
   .hero-ilu{order:-1;max-width:420px;margin:auto}
-  .hero-selo{left:8px;top:-12px;bottom:auto;font-size:12px}
+  .hero-selo{left:40px;top:-14px;bottom:auto;font-size:12px}
+  .hero-ilu{margin:30px auto 34px;max-width:calc(100% - 24px)}
+  .hero-ic{width:40px;height:40px;font-size:19px}.hero-ic.txt{font-size:13px}.hero-ic.i1{left:-10px;top:-16px}.hero-ic.i2{left:auto;right:22%;top:-22px}.hero-ic.i3{left:-14px;top:46%}.hero-ic.i4{right:-12px;top:40%}.hero-ic.i5{right:-8px;bottom:-20px}.hero-ic.i6{left:24%;bottom:-24px}.hero-ic.i7{right:auto;left:44%;bottom:-24px}
   .hero-selo.s2{left:auto;right:8px;top:auto;bottom:-14px}
   .series{grid-template-columns:repeat(2,1fr);gap:14px}
   .serie:last-child:nth-child(odd){grid-column:1/-1;min-height:0}
@@ -240,6 +249,13 @@ footer .prof{display:inline-flex;align-items:center;gap:8px;border:1px solid rgb
         <img src="aula.jpg?v=2" alt="Professor Welington ajudando uma aluna no computador da sala de informática" width="1200" height="652">
       </figure>
       <div class="hero-selo flutua">🤖 Aula de Informática</div>
+      <span class="hero-ic flutua i1">📶</span>
+      <span class="hero-ic flutua2 i2">💻</span>
+      <span class="hero-ic flutua i3">🖱️</span>
+      <span class="hero-ic flutua2 txt i4">&lt;/&gt;</span>
+      <span class="hero-ic flutua i5">☁️</span>
+      <span class="hero-ic flutua2 i6">🤖</span>
+      <span class="hero-ic flutua i7">🔒</span>
     </div>
   </div>
 </section>
