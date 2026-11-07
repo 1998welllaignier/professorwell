@@ -85,6 +85,8 @@ header.nav.sombra{border-color:var(--borda)}
 .serie .ir{margin-top:12px;font-weight:700;color:var(--cor);font-size:14px}
 .serie .deco{position:absolute;right:-18px;top:-18px;width:84px;height:84px;border-radius:50%;background:var(--cor);opacity:.14}
 .serie .emo{position:absolute;right:14px;top:14px;font-size:28px}
+.outra-escola{display:inline-flex;align-items:center;gap:8px;margin-top:22px;background:rgba(255,255,255,.12);border:2px dashed rgba(255,255,255,.4);color:#fff;text-decoration:none;padding:12px 18px;border-radius:16px;font-size:16px}
+.outra-escola:hover{background:rgba(255,255,255,.2)}
 .dica-cod{margin-top:26px;display:flex;align-items:center;gap:12px;font-size:15px;color:#e0e7ff}
 .dica-cod .k{font-family:ui-monospace,monospace;background:#fff;color:var(--azul);font-weight:800;padding:4px 10px;border-radius:8px;letter-spacing:4px}
 
@@ -288,6 +290,7 @@ footer .prof{display:inline-flex;align-items:center;gap:8px;border:1px solid rgb
       <div class="passo"><b>3</b>Digite o seu código</div>
     </div>
     <div class="series" id="series"></div>
+    <a class="outra-escola" id="link-explorador" href="#">🏫 É da <strong>Escola Santos Dumont</strong>? Entre no <strong>Modo Explorador</strong> →</a>
     <p class="dica-cod">🪪 O código tem 4 números, assim: <span class="k">0000</span>. Esqueceu? Peça ao professor na aula.</p>
   </div>
 </section>
@@ -436,6 +439,7 @@ $("#series").innerHTML = SERIES.map(s => `
   </a>`).join("");
 
 $("#link-painel").href = PORTAL + "#/painel";
+$("#link-explorador").href = PORTAL + "#/explorar/santos-dumont";
 $("#ano").textContent = new Date().getFullYear();
 
 function agoraBR() {
