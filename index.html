@@ -1,0 +1,490 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Professor Welington · Sala de Informática da Escola JK</title>
+<meta name="description" content="Sala de Informática do Professor Welington Laignier, EMEF Juscelino Kubitschek (Escola JK), Curionópolis/PA. Horários, avisos e entrada no Portal da Informática.">
+<meta name="theme-color" content="#1e3a8a">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='6' y='8' width='52' height='38' rx='8' fill='%233b82f6'/%3E%3Crect x='12' y='14' width='40' height='26' rx='5' fill='%23e0f2fe'/%3E%3Ccircle cx='24' cy='26' r='4' fill='%231e3a8a'/%3E%3Ccircle cx='40' cy='26' r='4' fill='%231e3a8a'/%3E%3Cpath d='M25 33q7 5 14 0' stroke='%231e3a8a' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3Crect x='22' y='48' width='20' height='8' rx='3' fill='%23f97316'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --azul:#1e3a8a; --azul2:#2563eb; --azul-claro:#dbeafe; --laranja:#f97316; --laranja-esc:#c2410c;
+  --amarelo:#fde047; --verde:#16a34a; --rosa:#ec4899; --roxo:#7c3aed;
+  --fundo:#fff8ec; --papel:#ffffff; --texto:#1f2937; --suave:#5b6474; --borda:#e7e2d6;
+  --raio:22px; --sombra:0 6px 0 rgba(30,58,138,.10), 0 18px 40px -18px rgba(30,58,138,.25);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:clip}
+section{overflow-x:clip}
+body{font-family:Poppins,system-ui,sans-serif;color:var(--texto);background:var(--fundo);line-height:1.55;overflow-x:hidden}
+a{color:inherit}
+img,svg{max-width:100%}
+.cx{width:min(1120px,100% - 32px);margin-inline:auto}
+section{padding:72px 0}
+h2.tit{font-size:clamp(26px,3.6vw,38px);line-height:1.15;color:var(--azul);font-weight:800;letter-spacing:-.5px}
+h2.tit .emo{display:inline-block;transform:translateY(2px)}
+p.lead{color:var(--suave);font-size:17px;margin-top:8px;max-width:640px}
+.chip{display:inline-flex;align-items:center;gap:6px;background:var(--amarelo);color:#713f12;font-weight:700;font-size:13px;padding:6px 14px;border-radius:999px;transform:rotate(-1.5deg)}
+
+/* ---------- topo ---------- */
+header.nav{position:sticky;top:0;z-index:20;background:rgba(255,248,236,.86);backdrop-filter:blur(10px);border-bottom:1px solid transparent;transition:border-color .2s}
+header.nav.sombra{border-color:var(--borda)}
+.nav .cx{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+.marca{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:800;color:var(--azul);font-size:18px;white-space:nowrap}
+.marca small{display:block;font-weight:500;font-size:11px;color:var(--suave);margin-top:-4px}
+.nav ul{display:flex;gap:22px;list-style:none;font-weight:600;font-size:15px}
+.nav ul a{text-decoration:none;color:var(--texto);opacity:.8}
+.nav ul a:hover{opacity:1;color:var(--azul2)}
+.btn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:700;border-radius:999px;padding:12px 22px;font-size:16px;border:0;cursor:pointer;transition:transform .15s, box-shadow .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn-lar{background:var(--laranja);color:#fff;box-shadow:0 5px 0 var(--laranja-esc)}
+.btn-azul{background:var(--azul2);color:#fff;box-shadow:0 5px 0 var(--azul)}
+.btn-bco{background:#fff;color:var(--azul);box-shadow:0 5px 0 #c7d2fe}
+.btn-zap{background:#22c55e;color:#fff;box-shadow:0 5px 0 #15803d}
+.nav .btn{padding:9px 18px;font-size:14px}
+
+/* ---------- hero ---------- */
+.hero{position:relative;padding:48px 0 90px;overflow:hidden}
+.hero .cx{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center}
+.hero h1{font-size:clamp(40px,6.4vw,74px);line-height:1;font-weight:800;color:var(--azul);letter-spacing:-2px;margin:18px 0 10px}
+.hero h1 .nome{display:block;color:var(--laranja);position:relative;width:fit-content}
+.hero h1 .nome::after{content:"";position:absolute;left:0;right:0;bottom:4px;height:14px;background:var(--amarelo);z-index:-1;border-radius:8px;transform:rotate(-1deg)}
+.hero .sub{font-size:19px;color:var(--suave);max-width:520px}
+.hero .sub b{color:var(--texto)}
+.escola{display:flex;align-items:center;gap:12px;margin-top:22px;background:#fff;border:2px solid var(--borda);border-radius:16px;padding:10px 16px;width:fit-content}
+.escola .ic{width:40px;height:40px;border-radius:12px;background:var(--azul-claro);display:grid;place-items:center;font-size:22px}
+.escola strong{display:block;color:var(--azul);line-height:1.2}
+.escola span{font-size:13px;color:var(--suave)}
+.hero .acoes{display:flex;flex-wrap:wrap;gap:14px;margin-top:28px}
+.hero-ilu{position:relative}
+.hero-ilu svg{width:100%;height:auto;display:block;filter:drop-shadow(0 24px 30px rgba(30,58,138,.18))}
+.flutua{animation:flutua 5s ease-in-out infinite}
+.flutua2{animation:flutua 6s ease-in-out infinite reverse}
+@keyframes flutua{50%{transform:translateY(-10px)}}
+.bolha{position:absolute;border-radius:50%;z-index:-1}
+.onda{display:block;width:100%;height:60px;margin-top:-1px}
+
+/* ---------- aluno ---------- */
+#aluno{background:var(--azul);color:#fff;position:relative}
+#aluno h2.tit{color:#fff}
+#aluno p.lead{color:#c7d2fe}
+.passos{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 30px}
+.passo{display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:8px 16px 8px 8px;font-weight:600;font-size:15px}
+.passo b{width:28px;height:28px;border-radius:50%;background:var(--amarelo);color:var(--azul);display:grid;place-items:center;font-size:14px}
+.series{display:grid;grid-template-columns:repeat(5,1fr);gap:18px}
+.serie{position:relative;text-decoration:none;background:#fff;color:var(--texto);border-radius:var(--raio);padding:22px 18px 18px;box-shadow:0 8px 0 var(--cor-esc);transition:transform .18s, box-shadow .18s;overflow:hidden;display:flex;flex-direction:column;min-height:200px}
+.serie:hover{transform:translateY(-6px) rotate(-1deg);box-shadow:0 14px 0 var(--cor-esc)}
+.serie .num{font-size:58px;font-weight:800;line-height:1;color:var(--cor);letter-spacing:-2px}
+.serie .num sup{font-size:26px}
+.serie .ano{font-weight:700;font-size:18px;margin-top:2px}
+.serie .tema{font-size:13px;color:var(--suave);margin-top:6px;flex:1}
+.serie .ir{margin-top:12px;font-weight:700;color:var(--cor);font-size:14px}
+.serie .deco{position:absolute;right:-18px;top:-18px;width:84px;height:84px;border-radius:50%;background:var(--cor);opacity:.14}
+.serie .emo{position:absolute;right:14px;top:14px;font-size:28px}
+.dica-cod{margin-top:26px;display:flex;align-items:center;gap:12px;font-size:15px;color:#e0e7ff}
+.dica-cod .k{font-family:ui-monospace,monospace;background:#fff;color:var(--azul);font-weight:800;padding:4px 10px;border-radius:8px;letter-spacing:4px}
+
+/* ---------- horários ---------- */
+.agora{margin-top:22px;display:flex;align-items:center;gap:14px;background:#fff;border:2px dashed var(--laranja);border-radius:18px;padding:14px 18px;width:fit-content;max-width:100%}
+.agora .pulso{width:14px;height:14px;border-radius:50%;background:var(--laranja);box-shadow:0 0 0 0 rgba(249,115,22,.6);animation:pulso 1.6s infinite;flex:none}
+@keyframes pulso{70%{box-shadow:0 0 0 12px rgba(249,115,22,0)}100%{box-shadow:0 0 0 0 rgba(249,115,22,0)}}
+.semana{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:28px}
+.dia{background:var(--papel);border-radius:var(--raio);padding:16px;border:2px solid var(--borda);position:relative}
+.dia.hoje{border-color:var(--azul2);box-shadow:var(--sombra)}
+.dia.hoje::before{content:"HOJE";position:absolute;top:-12px;right:14px;background:var(--azul2);color:#fff;font-size:11px;font-weight:800;padding:3px 10px;border-radius:999px;letter-spacing:1px}
+.dia h3{font-size:17px;color:var(--azul);display:flex;align-items:center;gap:8px;margin-bottom:12px}
+.aula{display:flex;align-items:center;gap:10px;padding:10px;border-radius:14px;background:var(--bg);margin-bottom:8px}
+.aula:last-child{margin-bottom:0}
+.aula .t{font-weight:700;font-size:13px;color:var(--suave);width:54px;flex:none;line-height:1.2}
+.aula .t small{display:block;font-weight:500;font-size:11px}
+.aula .tu{font-weight:800;font-size:18px;color:var(--cor)}
+.aula.ja{opacity:.5}
+.aula.ag{outline:3px solid var(--laranja);outline-offset:2px}
+.legenda{margin-top:16px;font-size:13px;color:var(--suave);display:flex;flex-wrap:wrap;gap:16px}
+
+/* ---------- avisos ---------- */
+#avisos{background:#fff3e0}
+.avisos{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:28px}
+.aviso{background:#fff;border-radius:var(--raio);padding:22px;position:relative;box-shadow:var(--sombra);transform:rotate(var(--r,0deg))}
+.aviso::before{content:"";position:absolute;top:-10px;left:50%;width:70px;height:22px;margin-left:-35px;background:rgba(253,224,71,.85);transform:rotate(-3deg);border-radius:3px}
+.aviso .ic{font-size:30px}
+.aviso h3{font-size:18px;color:var(--azul);margin:6px 0 4px}
+.aviso p{font-size:15px;color:var(--suave)}
+.aviso .data{display:inline-block;margin-top:10px;font-size:12px;font-weight:700;color:var(--laranja-esc);background:#ffedd5;padding:3px 10px;border-radius:999px}
+
+/* ---------- combinados ---------- */
+.combinados{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:28px}
+.comb{background:#fff;border:2px solid var(--borda);border-radius:var(--raio);padding:20px;text-align:center;transition:transform .18s}
+.comb:hover{transform:translateY(-4px)}
+.comb .ic{width:64px;height:64px;margin:0 auto 10px;border-radius:20px;display:grid;place-items:center;font-size:32px;background:var(--bg)}
+.comb h3{font-size:16px;color:var(--azul);line-height:1.25}
+.comb p{font-size:13.5px;color:var(--suave);margin-top:4px}
+
+/* ---------- professor ---------- */
+#professor .cx{display:grid;grid-template-columns:.8fr 1.2fr;gap:48px;align-items:center}
+.foto{position:relative;aspect-ratio:1;max-width:380px;margin:auto;width:100%}
+.foto .moldura{position:absolute;inset:0;border-radius:42% 58% 55% 45%/48% 42% 58% 52%;background:linear-gradient(135deg,var(--laranja),var(--amarelo));transform:rotate(-6deg)}
+.foto .img{position:absolute;inset:14px;border-radius:40% 60% 52% 48%/50% 44% 56% 50%;background:var(--azul-claro);overflow:hidden;display:grid;place-items:center}
+.foto .img img{width:100%;height:100%;object-fit:cover}
+.foto .selo{position:absolute;right:0;bottom:22px;background:#fff;border-radius:16px;padding:10px 14px;box-shadow:var(--sombra);font-weight:700;font-size:14px;color:var(--azul);transform:rotate(4deg)}
+.forma{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:22px}
+.forma div{display:flex;gap:10px;align-items:flex-start;background:#fff;border:2px solid var(--borda);border-radius:16px;padding:12px 14px;font-size:14.5px}
+.forma .ic{font-size:22px;line-height:1}
+.forma .destaque{grid-column:1/-1;background:linear-gradient(120deg,#1e3a8a,#2563eb);color:#dbeafe;border:0;padding:18px 20px;box-shadow:0 6px 0 #f97316}
+.forma .destaque b{color:#fff;font-size:18px}
+.forma .destaque .ic{font-size:32px}
+.forma .largo{grid-column:1/-1}
+.forma b{display:block;color:var(--azul);font-size:15px}
+.well{margin-top:18px;font-size:14.5px;color:var(--suave);background:#fff;border-left:5px solid var(--laranja);padding:12px 16px;border-radius:0 14px 14px 0}
+.well b{color:var(--laranja-esc)}
+
+/* ---------- contato ---------- */
+#contato{padding:40px 0 80px}
+.contato{background:linear-gradient(120deg,var(--azul) 0%,#3b5fd6 100%);border-radius:32px;color:#fff;padding:44px;display:grid;grid-template-columns:1.3fr 1fr;gap:30px;align-items:center;position:relative;overflow:hidden}
+.contato h2.tit{color:#fff}
+.contato p{color:#dbeafe;margin-top:8px}
+.contato .tel{font-size:clamp(26px,3.4vw,36px);font-weight:800;letter-spacing:.5px;margin-top:14px;text-decoration:none;display:inline-block}
+.contato .acoes{display:flex;flex-wrap:wrap;gap:12px;justify-content:flex-end}
+.contato .obs{font-size:13px;color:#c7d2fe;margin-top:10px}
+
+footer{background:#0f1f4d;color:#c7d2fe;padding:34px 0;font-size:14px}
+footer .cx{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:center}
+footer a{color:#fff;font-weight:600;text-decoration:none}
+footer .prof{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.25);padding:8px 14px;border-radius:999px}
+
+.revela{opacity:0;transform:translateY(18px);transition:opacity .6s, transform .6s}
+.revela.on{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.revela{opacity:1;transform:none}}
+
+/* ---------- celular ---------- */
+@media (max-width:980px){
+  .series{grid-template-columns:repeat(3,1fr)}
+  .semana{grid-template-columns:repeat(2,1fr)}
+  .combinados{grid-template-columns:repeat(2,1fr)}
+  .avisos{grid-template-columns:1fr}
+  .nav ul{display:none}
+}
+@media (max-width:760px){
+  section{padding:56px 0}
+  .hero{padding:24px 0 60px}
+  .hero .cx,#professor .cx,.contato{grid-template-columns:1fr}
+  .hero-ilu{order:-1;max-width:420px;margin:auto}
+  .series{grid-template-columns:repeat(2,1fr);gap:14px}
+  .serie{min-height:170px;padding:18px 14px 14px}
+  .serie .num{font-size:46px}
+  .semana{grid-template-columns:1fr}
+  .forma{grid-template-columns:1fr}
+  .contato{padding:30px 22px}
+  .contato .acoes{justify-content:flex-start}
+  .nav .btn span{display:none}
+}
+</style>
+</head>
+<body>
+
+<header class="nav" id="topo">
+  <div class="cx">
+    <a class="marca" href="#">
+      <svg width="38" height="38" viewBox="0 0 64 64" aria-hidden="true"><rect x="6" y="8" width="52" height="38" rx="8" fill="#3b82f6"/><rect x="12" y="14" width="40" height="26" rx="5" fill="#e0f2fe"/><circle cx="24" cy="26" r="4" fill="#1e3a8a"/><circle cx="40" cy="26" r="4" fill="#1e3a8a"/><path d="M25 33q7 5 14 0" stroke="#1e3a8a" stroke-width="3" fill="none" stroke-linecap="round"/><rect x="22" y="48" width="20" height="8" rx="3" fill="#f97316"/></svg>
+      <span>Professor Welington<small>Sala de Informática · Escola JK</small></span>
+    </a>
+    <ul>
+      <li><a href="#aluno">Alunos</a></li>
+      <li><a href="#horarios">Horários</a></li>
+      <li><a href="#avisos">Avisos</a></li>
+      <li><a href="#professor">O professor</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+    <a class="btn btn-lar" href="#aluno">🎒 <span>Sou aluno</span></a>
+  </div>
+</header>
+
+<main>
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="bolha" style="width:420px;height:420px;background:#fde68a;opacity:.45;right:-120px;top:-140px"></div>
+  <div class="bolha" style="width:260px;height:260px;background:#bfdbfe;opacity:.6;left:-120px;bottom:-60px"></div>
+  <div class="cx">
+    <div>
+      <span class="chip">💻 Sala de Informática</span>
+      <h1>Professor <span class="nome">Welington</span></h1>
+      <p class="sub">Aqui a gente aprende <b>tecnologia de verdade</b>: como o computador pensa, como a internet funciona e como usar tudo isso <b>com segurança e respeito</b>.</p>
+      <div class="escola">
+        <div class="ic">🏫</div>
+        <div><strong>EMEF Juscelino Kubitschek · Escola JK</strong><span>Curionópolis · Pará</span></div>
+      </div>
+      <div class="acoes">
+        <a class="btn btn-lar" href="#aluno">🎒 Sou aluno: entrar</a>
+        <a class="btn btn-bco" href="#horarios">🗓️ Ver horários</a>
+      </div>
+    </div>
+
+    <div class="hero-ilu">
+      <svg viewBox="0 0 520 440" role="img" aria-label="Ilustração de um computador com um robô sorridente">
+        <!-- mesa -->
+        <ellipse cx="260" cy="408" rx="210" ry="18" fill="#1e3a8a" opacity=".12"/>
+        <rect x="70" y="352" width="380" height="18" rx="9" fill="#f59e0b"/>
+        <!-- monitor -->
+        <g>
+          <rect x="110" y="96" width="300" height="208" rx="22" fill="#1e3a8a"/>
+          <rect x="124" y="110" width="272" height="168" rx="12" fill="#eff6ff"/>
+          <rect x="124" y="110" width="272" height="28" rx="12" fill="#dbeafe"/>
+          <circle cx="142" cy="124" r="5" fill="#f87171"/><circle cx="158" cy="124" r="5" fill="#fbbf24"/><circle cx="174" cy="124" r="5" fill="#4ade80"/>
+          <rect x="142" y="154" width="110" height="12" rx="6" fill="#2563eb"/>
+          <rect x="142" y="176" width="160" height="9" rx="4.5" fill="#cbd5e1"/>
+          <rect x="142" y="193" width="130" height="9" rx="4.5" fill="#cbd5e1"/>
+          <rect x="142" y="210" width="150" height="9" rx="4.5" fill="#cbd5e1"/>
+          <rect x="142" y="236" width="86" height="26" rx="13" fill="#f97316"/>
+          <rect x="156" y="245" width="58" height="8" rx="4" fill="#fff"/>
+          <circle cx="345" cy="205" r="34" fill="#4ade80"/>
+          <path d="M328 206l12 12 22-26" stroke="#fff" stroke-width="9" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <rect x="236" y="304" width="48" height="34" fill="#1e3a8a"/>
+          <rect x="196" y="334" width="128" height="18" rx="9" fill="#1e3a8a"/>
+        </g>
+        <!-- robô -->
+        <g class="flutua" style="transform-origin:center">
+          <line x1="450" y1="186" x2="450" y2="200" stroke="#1e3a8a" stroke-width="4"/><circle cx="450" cy="182" r="7" fill="#f97316"/>
+          <rect x="406" y="200" width="88" height="66" rx="20" fill="#3b82f6" stroke="#1e3a8a" stroke-width="4"/>
+          <rect x="418" y="212" width="64" height="40" rx="12" fill="#e0f2fe"/>
+          <circle cx="436" cy="230" r="7" fill="#1e3a8a"/><circle cx="464" cy="230" r="7" fill="#1e3a8a"/><circle cx="438" cy="227" r="2.4" fill="#fff"/><circle cx="466" cy="227" r="2.4" fill="#fff"/>
+          <path d="M438 242q12 8 24 0" stroke="#1e3a8a" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+          <circle cx="424" cy="243" r="4" fill="#fda4af"/><circle cx="476" cy="243" r="4" fill="#fda4af"/>
+          <rect x="420" y="268" width="60" height="42" rx="12" fill="#60a5fa" stroke="#1e3a8a" stroke-width="4"/>
+          <circle cx="438" cy="289" r="5" fill="#fde047"/><circle cx="452" cy="289" r="5" fill="#4ade80"/><circle cx="466" cy="289" r="5" fill="#f472b6"/>
+          <path d="M420 280l-22-18" stroke="#1e3a8a" stroke-width="7" stroke-linecap="round"/><circle cx="394" cy="258" r="8" fill="#f97316"/>
+        </g>
+        <!-- ícones flutuantes -->
+        <g class="flutua2">
+          <circle cx="78" cy="96" r="34" fill="#fff" stroke="#e7e2d6" stroke-width="3"/>
+          <path d="M62 100a22 22 0 0 1 32 0M68 106a13 13 0 0 1 20 0" stroke="#2563eb" stroke-width="5" fill="none" stroke-linecap="round"/><circle cx="78" cy="113" r="4" fill="#2563eb"/>
+        </g>
+        <g class="flutua">
+          <circle cx="440" cy="66" r="36" fill="#fff" stroke="#e7e2d6" stroke-width="3"/>
+          <path d="M422 76h34a12 12 0 0 0 0-24 16 16 0 0 0-30-4 11 11 0 0 0-4 28z" fill="#93c5fd"/>
+        </g>
+        <g class="flutua2">
+          <circle cx="58" cy="256" r="30" fill="#fff" stroke="#e7e2d6" stroke-width="3"/>
+          <rect x="46" y="254" width="24" height="18" rx="4" fill="#f97316"/><path d="M50 254v-6a8 8 0 0 1 16 0v6" stroke="#f97316" stroke-width="4" fill="none"/>
+        </g>
+        <g fill="#f59e0b"><path d="M262 40l4 9 10 1-7 7 2 10-9-5-9 5 2-10-7-7 10-1z"/><path d="M30 180l2.6 6 6.4.6-4.8 4.4 1.4 6.4-5.6-3.4-5.6 3.4 1.4-6.4-4.8-4.4 6.4-.6z"/></g>
+        <text x="330" y="60" font-family="Poppins" font-weight="800" font-size="22" fill="#1e3a8a" opacity=".7">&lt;/&gt;</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ALUNO ================= -->
+<section id="aluno">
+  <div class="cx">
+    <h2 class="tit"><span class="emo">🎒</span> Sou aluno: escolha a sua série</h2>
+    <p class="lead">As apostilas agora são digitais, com missões e correção na hora. É só seguir 3 passos:</p>
+    <div class="passos">
+      <div class="passo"><b>1</b>Clique na sua série</div>
+      <div class="passo"><b>2</b>Escolha a sua turma</div>
+      <div class="passo"><b>3</b>Digite o seu código</div>
+    </div>
+    <div class="series" id="series"></div>
+    <p class="dica-cod">🪪 O código tem 4 números, assim: <span class="k">0000</span>. Esqueceu? Peça ao professor na aula.</p>
+  </div>
+</section>
+<svg class="onda" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0 0h1440v20c-240 40-480 40-720 10S240 0 0 30z" fill="#1e3a8a"/></svg>
+
+<!-- ================= HORÁRIOS ================= -->
+<section id="horarios" style="padding-top:40px">
+  <div class="cx">
+    <h2 class="tit"><span class="emo">🗓️</span> Horários da Sala de Informática</h2>
+    <p class="lead">Cada turma tem uma aula por semana, no contraturno. Chegue no horário: a missão começa logo!</p>
+    <div class="agora" id="agora"><span class="pulso"></span><span id="agora-txt">Carregando…</span></div>
+    <div class="semana" id="semana"></div>
+      </div>
+</section>
+
+<!-- ================= AVISOS ================= -->
+<section id="avisos">
+  <div class="cx">
+    <h2 class="tit"><span class="emo">📢</span> Mural de avisos</h2>
+    <p class="lead">O que está acontecendo na Sala de Informática.</p>
+    <div class="avisos" id="lista-avisos"></div>
+  </div>
+</section>
+
+<!-- ================= COMBINADOS ================= -->
+<section id="combinados">
+  <div class="cx">
+    <h2 class="tit"><span class="emo">🤝</span> Combinados da sala</h2>
+    <p class="lead">Pra todo mundo aprender e os computadores durarem muito tempo.</p>
+    <div class="combinados">
+      <div class="comb" style="--bg:#dbeafe"><div class="ic">💻</div><h3>Cada um no seu computador</h3><p>Sempre o mesmo lugar, e nada de mexer no do colega.</p></div>
+      <div class="comb" style="--bg:#dcfce7"><div class="ic">🍎</div><h3>Comida e bebida ficam fora</h3><p>Migalha e suco estragam o teclado.</p></div>
+      <div class="comb" style="--bg:#fef3c7"><div class="ic">🔌</div><h3>Cabos não se mexem</h3><p>Algo deu errado? Levante a mão e chame o professor.</p></div>
+      <div class="comb" style="--bg:#fce7f3"><div class="ic">🔐</div><h3>Código é só seu</h3><p>Não empreste nem use o código de outra pessoa.</p></div>
+      <div class="comb" style="--bg:#ede9fe"><div class="ic">📵</div><h3>Celular só quando o professor pedir</h3><p>Na escola, o celular fica guardado. Na Informática, ele só é usado se o professor solicitar para a atividade.</p></div>
+      <div class="comb" style="--bg:#ffedd5"><div class="ic">💬</div><h3>Respeito na internet</h3><p>Nada de ofensa, foto de colega ou informação pessoal.</p></div>
+      <div class="comb" style="--bg:#e0f2fe"><div class="ic">🙋</div><h3>Dúvida é bem-vinda</h3><p>Ninguém nasce sabendo. Pergunte sempre!</p></div>
+      <div class="comb" style="--bg:#f1f5f9"><div class="ic">🖱️</div><h3>Desligar do jeito certo</h3><p>Iniciar → Ligar/Desligar → Desligar.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROFESSOR ================= -->
+<section id="professor" style="background:#eef4ff">
+  <div class="cx">
+    <div class="foto revela">
+      <div class="moldura"></div>
+      <div class="img" id="foto-prof">
+        <!-- avatar ilustrado (troca pela foto quando chegar: foto-professor.jpg) -->
+        <svg viewBox="0 0 200 200" width="88%" aria-label="Avatar do professor">
+          <circle cx="100" cy="100" r="100" fill="#dbeafe"/>
+          <path d="M40 200c0-44 26-66 60-66s60 22 60 66z" fill="#1e3a8a"/>
+          <path d="M84 134l16 22 16-22z" fill="#fff"/>
+          <rect x="88" y="112" width="24" height="26" rx="10" fill="#c68642"/>
+          <ellipse cx="100" cy="86" rx="38" ry="42" fill="#d69a5a"/>
+          <path d="M60 80c0-30 18-44 40-44s42 12 40 44c-6-14-20-20-40-20s-34 6-40 20z" fill="#2b1d14"/>
+          <circle cx="86" cy="90" r="4.5" fill="#1f2937"/><circle cx="114" cy="90" r="4.5" fill="#1f2937"/>
+          <rect x="72" y="80" width="26" height="20" rx="8" fill="none" stroke="#1e3a8a" stroke-width="3.5"/><rect x="102" y="80" width="26" height="20" rx="8" fill="none" stroke="#1e3a8a" stroke-width="3.5"/><path d="M98 88h4" stroke="#1e3a8a" stroke-width="3.5"/>
+          <path d="M88 110q12 9 24 0" stroke="#7c2d12" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="selo">👨‍🏫 Prof. Welington</div>
+    </div>
+    <div>
+      <span class="chip">👋 Prazer!</span>
+      <h2 class="tit" style="margin-top:12px">Professor Welington Laignier</h2>
+      <p class="lead">Professor de Informática da Escola JK, especialista em Tecnologias Educacionais. Cuida da sala de informática e da rede da escola, e prepara os materiais das aulas: apostilas alinhadas à BNCC, vídeos e o Portal da Informática.</p>
+      <div class="forma">
+        <div class="destaque"><span class="ic">🏆</span><span><b>Especialização em Tecnologias Educacionais</b>A formação que une educação e tecnologia, base do trabalho como professor de Informática da rede.</span></div>
+        <div><span class="ic">🎓</span><span><b>Pedagogia</b>Licenciatura</span></div>
+        <div><span class="ic">📚</span><span><b>Letras</b>Português e Inglês</span></div>
+        <div class="largo"><span class="ic">🏅</span><span><b>Outras especializações</b>Atendimento Educacional Especializado (AEE) · Gestão Escolar · Administração, Supervisão e Orientação Escolar</span></div>
+      </div>
+      <p class="well">💡 Por que <b>professorwell</b>? Porque tem duplo sentido: é o <b>Prof. Wel</b>, e <b>“well”</b>, em inglês, quer dizer <b>“bem”</b>. Aqui a gente aprende tecnologia, e aprende <b>bem</b>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTATO ================= -->
+<section id="contato">
+  <div class="cx">
+    <div class="contato revela">
+      <div>
+        <h2 class="tit">📞 Fale com o professor</h2>
+        <p>Pais, responsáveis e equipe da escola: dúvidas sobre as aulas, códigos de acesso ou o portal.</p>
+        <a class="tel" href="tel:+5594991843256">(94) 99184-3256</a>
+        <p class="obs">Atendimento em horário escolar, de segunda a sexta.</p>
+      </div>
+      <div class="acoes">
+        <a class="btn btn-zap" href="https://wa.me/5594991843256" target="_blank" rel="noopener">💬 WhatsApp</a>
+        <a class="btn btn-bco" href="tel:+5594991843256">📱 Ligar</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="cx">
+    <span>© <span id="ano"></span> Professor Welington Laignier · Sala de Informática · EMEF Juscelino Kubitschek · Curionópolis/PA</span>
+    <a class="prof" id="link-painel" href="#">🔐 Área do professor</a>
+  </div>
+</footer>
+
+<script>
+/* ======== CONFIGURAÇÃO (editar aqui) ======== */
+const PORTAL = "https://1998welllaignier.github.io/portal-da-informatica/";
+
+const SERIES = [
+  { id: "5", ano: "5º ano", emo: "🧩", tema: "Computador, listas e escolhas", cor: "#16a34a", esc: "#15803d" },
+  { id: "6", ano: "6º ano", emo: "🤖", tema: "Arquivos, algoritmos e cidadania", cor: "#2563eb", esc: "#1e3a8a" },
+  { id: "7", ano: "7º ano", emo: "🌐", tema: "Redes, decomposição e segurança", cor: "#7c3aed", esc: "#5b21b6" },
+  { id: "8", ano: "8º ano", emo: "☁️", tema: "Busca, nuvem e dados pessoais", cor: "#ea580c", esc: "#c2410c" },
+  { id: "9", ano: "9º ano", emo: "🔐", tema: "Grafos, criptografia e autoria", cor: "#db2777", esc: "#9d174d" }
+];
+
+// dia: 1 = segunda … 4 = quinta
+const HORARIOS = [
+  { dia: 1, ini: "07:30", t: "6º C" }, { dia: 1, ini: "09:00", t: "7º C" }, { dia: 1, ini: "13:30", t: "9º A" }, { dia: 1, ini: "15:00", t: "9º B" },
+  { dia: 2, ini: "07:30", t: "7º D" }, { dia: 2, ini: "09:00", t: "9º C" }, { dia: 2, ini: "13:30", t: "7º A" }, { dia: 2, ini: "15:00", t: "7º B" },
+  { dia: 3, ini: "07:30", t: "8º C" }, { dia: 3, ini: "09:00", t: "8º D" }, { dia: 3, ini: "13:30", t: "8º A" }, { dia: 3, ini: "15:00", t: "8º B" },
+  { dia: 4, ini: "09:00", t: "9º D" }, { dia: 4, ini: "13:30", t: "6º A" }, { dia: 4, ini: "15:00", t: "6º B" }
+];
+const DURACAO = 75; // minutos
+
+const AVISOS = [
+  { ic: "🚀", tit: "Apostilas agora são digitais!", txt: "Neste 4º bimestre as missões são feitas no Portal da Informática, com correção na hora.", data: "4º bimestre" },
+  { ic: "🪪", tit: "Guarde o seu código", txt: "Cada aluno tem um código de 4 números. Ele é só seu: não empreste para o colega.", data: "Sempre" },
+  { ic: "📝", tit: "Avaliação no Wayground", txt: "A prova do bimestre cai nos Resumos da Aula e nas Perguntas rápidas. Estude por eles!", data: "Fim de novembro" }
+];
+/* ============================================ */
+
+const CORES = { "5": "#16a34a", "6": "#2563eb", "7": "#7c3aed", "8": "#ea580c", "9": "#db2777" };
+const FUNDOS = { "5": "#dcfce7", "6": "#dbeafe", "7": "#ede9fe", "8": "#ffedd5", "9": "#fce7f3" };
+const DIAS = ["Domingo", "Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado"];
+const EMO_DIA = ["", "🌅", "🚀", "⚡", "🎯"];
+const $ = s => document.querySelector(s);
+const min = h => { const [a, b] = h.split(":").map(Number); return a * 60 + b; };
+const fmt = m => `${Math.floor(m / 60)}h${String(m % 60).padStart(2, "0")}`;
+
+$("#series").innerHTML = SERIES.map(s => `
+  <a class="serie" href="${PORTAL}#/serie/${s.id}" style="--cor:${s.cor};--cor-esc:${s.esc}">
+    <span class="deco"></span><span class="emo">${s.emo}</span>
+    <span class="num">${s.id}<sup>º</sup></span><span class="ano">${s.ano}</span>
+    <span class="tema">${s.tema}</span><span class="ir">Entrar →</span>
+  </a>`).join("");
+
+$("#link-painel").href = PORTAL + "#/painel";
+$("#ano").textContent = new Date().getFullYear();
+
+function agoraBR() {
+  // horário de Curionópolis (UTC−3), mesmo se o aparelho estiver em outro fuso
+  const d = new Date(Date.now() + (new Date().getTimezoneOffset() - 180) * 60000);
+  return { dia: d.getDay(), m: d.getHours() * 60 + d.getMinutes() };
+}
+
+function desenharSemana() {
+  const { dia, m } = agoraBR();
+  let html = "";
+  for (let d = 1; d <= 4; d++) {
+    const aulas = HORARIOS.filter(a => a.dia === d);
+    html += `<div class="dia ${d === dia ? "hoje" : ""}"><h3>${EMO_DIA[d]} ${DIAS[d]}</h3>` +
+      aulas.map(a => {
+        const i = min(a.ini), f = i + DURACAO, s = a.t[0];
+        const cls = d === dia ? (m >= f ? "ja" : m >= i ? "ag" : "") : "";
+        return `<div class="aula ${cls}" style="--cor:${CORES[s]};--bg:${FUNDOS[s]}"><span class="t">${fmt(i)}</span><span class="tu">${a.t}</span></div>`;
+      }).join("") + `</div>`;
+  }
+  $("#semana").innerHTML = html;
+
+  // faixa "agora"
+  const hoje = HORARIOS.filter(a => a.dia === dia);
+  const atual = hoje.find(a => m >= min(a.ini) && m < min(a.ini) + DURACAO);
+  const prox = hoje.find(a => min(a.ini) > m);
+  let txt;
+  if (atual) txt = `<b>Agora:</b> aula do <b>${atual.t}</b>`;
+  else if (prox) txt = `<b>Próxima aula hoje:</b> ${prox.t} às ${fmt(min(prox.ini))}`;
+  else {
+    let d = dia, achou = null;
+    for (let k = 1; k <= 7 && !achou; k++) { d = (dia + k) % 7; achou = HORARIOS.find(a => a.dia === d); }
+    txt = `<b>Sem aula agora.</b> Próxima: <b>${achou.t}</b> na ${DIAS[achou.dia].toLowerCase()} às ${fmt(min(achou.ini))}`;
+  }
+  $("#agora-txt").innerHTML = txt;
+}
+desenharSemana(); setInterval(desenharSemana, 60000);
+
+const rot = ["-1.2deg", "0.8deg", "-0.6deg"];
+$("#lista-avisos").innerHTML = AVISOS.map((a, i) => `<div class="aviso" style="--r:${rot[i % 3]}"><div class="ic">${a.ic}</div><h3>${a.tit}</h3><p>${a.txt}</p><span class="data">${a.data}</span></div>`).join("");
+
+// foto real, se existir
+const foto = new Image();
+foto.onload = () => { $("#foto-prof").innerHTML = ""; foto.alt = "Professor Welington Laignier"; $("#foto-prof").appendChild(foto); };
+foto.src = "foto-professor.jpg";
+
+// efeitos
+addEventListener("scroll", () => $("#topo").classList.toggle("sombra", scrollY > 10), { passive: true });
+const io = new IntersectionObserver(es => es.forEach(e => e.isIntersecting && e.target.classList.add("on")), { threshold: .15 });
+document.querySelectorAll(".revela").forEach(el => io.observe(el));
+</script>
+</body>
+</html>
