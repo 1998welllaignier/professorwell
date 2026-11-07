@@ -61,6 +61,10 @@ header.nav.sombra{border-color:var(--borda)}
 .escola span{font-size:13px;color:var(--suave)}
 .hero .acoes{display:flex;flex-wrap:wrap;gap:14px;margin-top:28px}
 .hero-ilu{position:relative}
+.hero-foto{margin:0;border-radius:28px;overflow:hidden;border:6px solid #fff;box-shadow:0 8px 0 #f97316,0 24px 40px -18px rgba(30,58,138,.45);transform:rotate(1.5deg)}
+.hero-foto img{display:block;width:100%;height:auto}
+.hero-selo{position:absolute;left:-14px;bottom:18px;background:#fff;border-radius:14px;padding:8px 14px;font-weight:700;color:#1e3a8a;box-shadow:0 6px 18px rgba(30,58,138,.18);font-size:14px}
+.hero-selo.s2{left:auto;right:-10px;top:14px;bottom:auto;color:#c2410c}
 .hero-ilu svg{width:100%;height:auto;display:block;filter:drop-shadow(0 24px 30px rgba(30,58,138,.18))}
 .flutua{animation:flutua 5s ease-in-out infinite}
 .flutua2{animation:flutua 6s ease-in-out infinite reverse}
@@ -178,6 +182,8 @@ footer .prof{display:inline-flex;align-items:center;gap:8px;border:1px solid rgb
   .hero{padding:24px 0 60px}
   .hero .cx,#professor .cx,.contato{grid-template-columns:1fr}
   .hero-ilu{order:-1;max-width:420px;margin:auto}
+  .hero-selo{left:8px;top:-12px;bottom:auto;font-size:12px}
+  .hero-selo.s2{left:auto;right:8px;top:auto;bottom:-14px}
   .series{grid-template-columns:repeat(2,1fr);gap:14px}
   .serie:last-child:nth-child(odd){grid-column:1/-1;min-height:0}
   .serie{min-height:170px;padding:18px 14px 14px}
@@ -230,55 +236,11 @@ footer .prof{display:inline-flex;align-items:center;gap:8px;border:1px solid rgb
     </div>
 
     <div class="hero-ilu">
-      <svg viewBox="0 0 520 440" role="img" aria-label="Ilustração de um computador com um robô sorridente">
-        <!-- mesa -->
-        <ellipse cx="260" cy="408" rx="210" ry="18" fill="#1e3a8a" opacity=".12"/>
-        <rect x="70" y="352" width="380" height="18" rx="9" fill="#f59e0b"/>
-        <!-- monitor -->
-        <g>
-          <rect x="110" y="96" width="300" height="208" rx="22" fill="#1e3a8a"/>
-          <rect x="124" y="110" width="272" height="168" rx="12" fill="#eff6ff"/>
-          <rect x="124" y="110" width="272" height="28" rx="12" fill="#dbeafe"/>
-          <circle cx="142" cy="124" r="5" fill="#f87171"/><circle cx="158" cy="124" r="5" fill="#fbbf24"/><circle cx="174" cy="124" r="5" fill="#4ade80"/>
-          <rect x="142" y="154" width="110" height="12" rx="6" fill="#2563eb"/>
-          <rect x="142" y="176" width="160" height="9" rx="4.5" fill="#cbd5e1"/>
-          <rect x="142" y="193" width="130" height="9" rx="4.5" fill="#cbd5e1"/>
-          <rect x="142" y="210" width="150" height="9" rx="4.5" fill="#cbd5e1"/>
-          <rect x="142" y="236" width="86" height="26" rx="13" fill="#f97316"/>
-          <rect x="156" y="245" width="58" height="8" rx="4" fill="#fff"/>
-          <circle cx="345" cy="205" r="34" fill="#4ade80"/>
-          <path d="M328 206l12 12 22-26" stroke="#fff" stroke-width="9" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-          <rect x="236" y="304" width="48" height="34" fill="#1e3a8a"/>
-          <rect x="196" y="334" width="128" height="18" rx="9" fill="#1e3a8a"/>
-        </g>
-        <!-- robô -->
-        <g class="flutua" style="transform-origin:center">
-          <line x1="450" y1="186" x2="450" y2="200" stroke="#1e3a8a" stroke-width="4"/><circle cx="450" cy="182" r="7" fill="#f97316"/>
-          <rect x="406" y="200" width="88" height="66" rx="20" fill="#3b82f6" stroke="#1e3a8a" stroke-width="4"/>
-          <rect x="418" y="212" width="64" height="40" rx="12" fill="#e0f2fe"/>
-          <circle cx="436" cy="230" r="7" fill="#1e3a8a"/><circle cx="464" cy="230" r="7" fill="#1e3a8a"/><circle cx="438" cy="227" r="2.4" fill="#fff"/><circle cx="466" cy="227" r="2.4" fill="#fff"/>
-          <path d="M438 242q12 8 24 0" stroke="#1e3a8a" stroke-width="3.5" fill="none" stroke-linecap="round"/>
-          <circle cx="424" cy="243" r="4" fill="#fda4af"/><circle cx="476" cy="243" r="4" fill="#fda4af"/>
-          <rect x="420" y="268" width="60" height="42" rx="12" fill="#60a5fa" stroke="#1e3a8a" stroke-width="4"/>
-          <circle cx="438" cy="289" r="5" fill="#fde047"/><circle cx="452" cy="289" r="5" fill="#4ade80"/><circle cx="466" cy="289" r="5" fill="#f472b6"/>
-          <path d="M420 280l-22-18" stroke="#1e3a8a" stroke-width="7" stroke-linecap="round"/><circle cx="394" cy="258" r="8" fill="#f97316"/>
-        </g>
-        <!-- ícones flutuantes -->
-        <g class="flutua2">
-          <circle cx="78" cy="96" r="34" fill="#fff" stroke="#e7e2d6" stroke-width="3"/>
-          <path d="M62 100a22 22 0 0 1 32 0M68 106a13 13 0 0 1 20 0" stroke="#2563eb" stroke-width="5" fill="none" stroke-linecap="round"/><circle cx="78" cy="113" r="4" fill="#2563eb"/>
-        </g>
-        <g class="flutua">
-          <circle cx="440" cy="66" r="36" fill="#fff" stroke="#e7e2d6" stroke-width="3"/>
-          <path d="M422 76h34a12 12 0 0 0 0-24 16 16 0 0 0-30-4 11 11 0 0 0-4 28z" fill="#93c5fd"/>
-        </g>
-        <g class="flutua2">
-          <circle cx="58" cy="256" r="30" fill="#fff" stroke="#e7e2d6" stroke-width="3"/>
-          <rect x="46" y="254" width="24" height="18" rx="4" fill="#f97316"/><path d="M50 254v-6a8 8 0 0 1 16 0v6" stroke="#f97316" stroke-width="4" fill="none"/>
-        </g>
-        <g fill="#f59e0b"><path d="M262 40l4 9 10 1-7 7 2 10-9-5-9 5 2-10-7-7 10-1z"/><path d="M30 180l2.6 6 6.4.6-4.8 4.4 1.4 6.4-5.6-3.4-5.6 3.4 1.4-6.4-4.8-4.4 6.4-.6z"/></g>
-        <text x="330" y="60" font-family="Poppins" font-weight="800" font-size="22" fill="#1e3a8a" opacity=".7">&lt;/&gt;</text>
-      </svg>
+      <figure class="hero-foto">
+        <img src="aula.jpg" alt="Professor Welington ajudando uma aluna no computador da sala de informática" width="1200" height="652">
+      </figure>
+      <div class="hero-selo flutua">🤖 Aula de Informática</div>
+      <div class="hero-selo s2 flutua2">⭐ Missão concluída!</div>
     </div>
   </div>
 </section>
