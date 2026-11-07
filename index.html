@@ -85,10 +85,11 @@ header.nav.sombra{border-color:var(--borda)}
 .serie .ir{margin-top:12px;font-weight:700;color:var(--cor);font-size:14px}
 .serie .deco{position:absolute;right:-18px;top:-18px;width:84px;height:84px;border-radius:50%;background:var(--cor);opacity:.14}
 .serie .emo{position:absolute;right:14px;top:14px;font-size:28px}
-.outra-escola{display:inline-flex;align-items:center;gap:8px;margin-top:22px;background:rgba(255,255,255,.12);border:2px dashed rgba(255,255,255,.4);color:#fff;text-decoration:none;padding:12px 18px;border-radius:16px;font-size:16px}
+.outra-escola{display:flex;align-items:center;gap:14px;max-width:560px;line-height:1.35;margin-top:22px;background:rgba(255,255,255,.12);border:2px dashed rgba(255,255,255,.4);color:#fff;text-decoration:none;padding:12px 18px;border-radius:16px;font-size:16px}
+.outra-escola .oe-ic{font-size:30px}.outra-escola .oe-txt{flex:1}.outra-escola .oe-seta{font-size:22px;font-weight:800}
 .outra-escola:hover{background:rgba(255,255,255,.2)}
-.dica-cod{margin-top:26px;display:flex;align-items:center;gap:12px;font-size:15px;color:#e0e7ff}
-.dica-cod .k{font-family:ui-monospace,monospace;background:#fff;color:var(--azul);font-weight:800;padding:4px 10px;border-radius:8px;letter-spacing:4px}
+.dica-cod{margin-top:22px;display:block;line-height:2;font-size:15px;color:#e0e7ff}
+.dica-cod .k{display:inline-block;margin:0 4px;font-family:ui-monospace,monospace;background:#fff;color:var(--azul);font-weight:800;padding:4px 10px;border-radius:8px;letter-spacing:4px}
 
 /* ---------- horários ---------- */
 .agora{margin-top:22px;display:flex;align-items:center;gap:14px;background:#fff;border:2px dashed var(--laranja);border-radius:18px;padding:14px 18px;width:fit-content;max-width:100%}
@@ -156,6 +157,7 @@ header.nav.sombra{border-color:var(--borda)}
 footer{background:#0f1f4d;color:#c7d2fe;padding:34px 0;font-size:14px}
 footer .cx{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:center}
 footer a{color:#fff;font-weight:600;text-decoration:none}
+footer .profs{display:flex;flex-wrap:wrap;gap:10px}
 footer .prof{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.25);padding:8px 14px;border-radius:999px}
 
 .revela{opacity:0;transform:translateY(18px);transition:opacity .6s, transform .6s}
@@ -165,6 +167,7 @@ footer .prof{display:inline-flex;align-items:center;gap:8px;border:1px solid rgb
 /* ---------- celular ---------- */
 @media (max-width:980px){
   .series{grid-template-columns:repeat(3,1fr)}
+  .series .serie:nth-child(n+4){grid-column:span 1}
   .semana{grid-template-columns:repeat(2,1fr)}
   .combinados{grid-template-columns:repeat(2,1fr)}
   .avisos{grid-template-columns:1fr}
@@ -176,6 +179,7 @@ footer .prof{display:inline-flex;align-items:center;gap:8px;border:1px solid rgb
   .hero .cx,#professor .cx,.contato{grid-template-columns:1fr}
   .hero-ilu{order:-1;max-width:420px;margin:auto}
   .series{grid-template-columns:repeat(2,1fr);gap:14px}
+  .serie:last-child:nth-child(odd){grid-column:1/-1;min-height:0}
   .serie{min-height:170px;padding:18px 14px 14px}
   .serie .num{font-size:46px}
   .semana{grid-template-columns:1fr}
@@ -290,7 +294,7 @@ footer .prof{display:inline-flex;align-items:center;gap:8px;border:1px solid rgb
       <div class="passo"><b>3</b>Digite o seu código</div>
     </div>
     <div class="series" id="series"></div>
-    <a class="outra-escola" id="link-explorador" href="#">🏫 É da <strong>Escola Santos Dumont</strong>? Entre no <strong>Modo Explorador</strong> →</a>
+    <a class="outra-escola" id="link-explorador" href="#"><span class="oe-ic">🏫</span><span class="oe-txt">É da <strong>Escola Santos Dumont</strong>?<br>Entre no <strong>Modo Explorador</strong></span><span class="oe-seta">→</span></a>
     <p class="dica-cod">🪪 O código tem 4 números, assim: <span class="k">0000</span>. Esqueceu? Peça ao professor na aula.</p>
   </div>
 </section>
@@ -391,7 +395,7 @@ footer .prof{display:inline-flex;align-items:center;gap:8px;border:1px solid rgb
 <footer>
   <div class="cx">
     <span>© <span id="ano"></span> Professor Welington Laignier · Sala de Informática · EMEF Juscelino Kubitschek · Curionópolis/PA</span>
-    <a class="prof" id="link-painel" href="#">🔐 Área do professor</a>
+    <span class="profs"><a class="prof" id="link-painel" href="#">🔐 Professor · Escola JK</a><a class="prof" id="link-painel-ex" href="#">🧭 Professor · Modo Explorador</a></span>
   </div>
 </footer>
 
@@ -439,6 +443,7 @@ $("#series").innerHTML = SERIES.map(s => `
   </a>`).join("");
 
 $("#link-painel").href = PORTAL + "#/painel";
+$("#link-painel-ex").href = PORTAL + "#/explorar/painel";
 $("#link-explorador").href = PORTAL + "#/explorar/santos-dumont";
 $("#ano").textContent = new Date().getFullYear();
 
