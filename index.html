@@ -34,8 +34,11 @@ p.lead{color:var(--suave);font-size:17px;margin-top:8px;max-width:640px}
 @keyframes balanca{0%,100%{transform:rotate(-1.5deg)}25%{transform:rotate(2deg) translateY(-2px)}50%{transform:rotate(-1.5deg)}60%{transform:rotate(1deg)}}
 
 /* ---------- topo ---------- */
-header.nav{position:sticky;top:0;z-index:20;background:rgba(255,248,236,.86);backdrop-filter:blur(10px);border-bottom:1px solid transparent;transition:border-color .2s}
-header.nav.sombra{border-color:var(--borda)}
+header.nav{position:sticky;top:0;z-index:20;background:var(--azul);border-bottom:4px solid var(--laranja);box-shadow:0 4px 14px rgba(30,58,138,.18)}
+header.nav .marca{color:#fff}
+header.nav .marca small{color:#c7d2fe}
+header.nav ul a{color:#fff;opacity:.85}
+header.nav ul a:hover{opacity:1;color:#fde047}
 .nav .cx{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
 .marca{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:800;color:var(--azul);font-size:18px;white-space:nowrap}
 .marca small{display:block;font-weight:500;font-size:11px;color:var(--suave);margin-top:-4px}
