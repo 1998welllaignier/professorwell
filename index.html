@@ -117,6 +117,8 @@ header.nav.sombra{border-color:var(--borda)}
 .aula .t small{display:block;font-weight:500;font-size:11px}
 .aula .tu{font-weight:800;font-size:18px;color:var(--cor)}
 .aula.ja{opacity:.5}
+.turno{font-size:12px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;color:var(--suave);margin:2px 0 8px}
+.turno.tarde{border-top:2px dashed var(--borda);padding-top:12px;margin-top:12px}
 .aula.ag{outline:3px solid var(--laranja);outline-offset:2px}
 .legenda{margin-top:16px;font-size:13px;color:var(--suave);display:flex;flex-wrap:wrap;gap:16px}
 
@@ -401,7 +403,7 @@ const DURACAO = 75; // minutos
 const AVISOS = [
   { ic: "🚀", tit: "Apostilas agora são digitais!", txt: "Neste 4º bimestre as missões são feitas no Portal da Informática, com correção na hora.", data: "4º bimestre" },
   { ic: "🪪", tit: "Guarde o seu código", txt: "Cada aluno tem um código de 4 números. Ele é só seu: não empreste para o colega.", data: "Sempre" },
-  { ic: "📝", tit: "Avaliação no Wayground", txt: "A prova do bimestre cai nos Resumos da Aula e nas Perguntas rápidas. Estude por eles!", data: "Fim de novembro" }
+  { ic: "📝", tit: "Avaliação no Portal", txt: "A prova do bimestre vai ser feita no próprio Portal da Informática, na sua aula. Ela cai nos Resumos da Aula e nas Perguntas rápidas. Estude por eles!", data: "Fim de novembro" }
 ];
 /* ============================================ */
 
@@ -437,10 +439,12 @@ function desenharSemana() {
   for (let d = 1; d <= 4; d++) {
     const aulas = HORARIOS.filter(a => a.dia === d);
     html += `<div class="dia ${d === dia ? "hoje" : ""}"><h3>${EMO_DIA[d]} ${DIAS[d]}</h3>` +
-      aulas.map(a => {
+      aulas.map((a, k) => {
         const i = min(a.ini), f = i + DURACAO, s = a.t[0];
         const cls = d === dia ? (m >= f ? "ja" : m >= i ? "ag" : "") : "";
-        return `<div class="aula ${cls}" style="--cor:${CORES[s]};--bg:${FUNDOS[s]}"><span class="t">${fmt(i)}</span><span class="tu">${a.t}</span></div>`;
+        const tarde = i >= 12 * 60, antes = k ? min(aulas[k - 1].ini) >= 12 * 60 : null;
+        const rot = antes === tarde ? "" : `<div class="turno ${tarde ? "tarde" : ""}">${tarde ? "🌇 Tarde" : "☀️ Manhã"}</div>`;
+        return rot + `<div class="aula ${cls}" style="--cor:${CORES[s]};--bg:${FUNDOS[s]}"><span class="t">${fmt(i)}</span><span class="tu">${a.t}</span></div>`;
       }).join("") + `</div>`;
   }
   $("#semana").innerHTML = html;
