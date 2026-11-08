@@ -30,6 +30,7 @@ h2.tit .emo{display:inline-block;transform:translateY(2px)}
 p.lead{color:var(--suave);font-size:17px;margin-top:8px;max-width:640px}
 .chip{display:inline-flex;align-items:center;gap:6px;background:var(--amarelo);color:#713f12;font-weight:700;font-size:13px;padding:6px 14px;border-radius:999px;transform:rotate(-1.5deg)}
 .chip{animation:balanca 2.6s ease-in-out infinite}
+.chip.fixo{animation:none}
 @keyframes balanca{0%,100%{transform:rotate(-1.5deg)}25%{transform:rotate(2deg) translateY(-2px)}50%{transform:rotate(-1.5deg)}60%{transform:rotate(1deg)}}
 
 /* ---------- topo ---------- */
@@ -252,7 +253,7 @@ footer .prof{display:inline-flex;align-items:center;gap:8px;border:1px solid rgb
   <div class="bolha" style="width:260px;height:260px;background:#bfdbfe;opacity:.6;left:-120px;bottom:-60px"></div>
   <div class="cx">
     <div>
-      <span class="chip">💻 Sala de Informática</span>
+      <span class="chip fixo">💻 Sala de Informática</span>
       <h1>Professor <span class="nome">Welington</span></h1>
       <p class="sub">Aqui a gente aprende <b>tecnologia de verdade</b>: como o computador pensa, como a internet funciona e como usar tudo isso <b>com segurança e respeito</b>.</p>
       <div class="escola">
