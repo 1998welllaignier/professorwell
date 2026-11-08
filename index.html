@@ -96,6 +96,14 @@ header.nav.sombra{border-color:var(--borda)}
 .serie .ir{margin-top:12px;font-weight:700;color:var(--cor);font-size:14px}
 .serie .deco{position:absolute;right:-18px;top:-18px;width:84px;height:84px;border-radius:50%;background:var(--cor);opacity:.14}
 .serie .emo{position:absolute;right:14px;top:14px;font-size:28px}
+.serie .deco{animation:respira 2.4s ease-in-out infinite}
+.serie .emo{animation:pisca 2.4s ease-in-out infinite}
+.serie:nth-child(2) .deco,.serie:nth-child(2) .emo{animation-delay:.3s}
+.serie:nth-child(3) .deco,.serie:nth-child(3) .emo{animation-delay:.6s}
+.serie:nth-child(4) .deco,.serie:nth-child(4) .emo{animation-delay:.9s}
+.serie:nth-child(5) .deco,.serie:nth-child(5) .emo{animation-delay:1.2s}
+@keyframes respira{50%{transform:scale(1.25);opacity:.28}}
+@keyframes pisca{50%{transform:scale(1.15)}}
 .outra-escola{display:flex;align-items:center;gap:14px;max-width:560px;line-height:1.35;margin-top:22px;background:rgba(255,255,255,.12);border:2px dashed rgba(255,255,255,.4);color:#fff;text-decoration:none;padding:12px 18px;border-radius:16px;font-size:16px}
 .outra-escola .oe-ic{font-size:30px}.outra-escola .oe-txt{flex:1}.outra-escola .oe-seta{font-size:22px;font-weight:800}
 .outra-escola:hover{background:rgba(255,255,255,.2)}
