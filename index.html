@@ -8,6 +8,10 @@
 <meta name="theme-color" content="#1e3a8a">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="apple-touch-icon" href="icone-180.png">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Prof. Well">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
@@ -229,6 +233,8 @@ footer .prof{display:inline-flex;align-items:center;gap:8px;border:1px solid rgb
   .contato .acoes{justify-content:flex-start}
   .nav .btn span{display:none}
 }
+.pwa-inst{text-align:center;padding:0 16px 24px}
+#pwa-inst{font:inherit;font-weight:800;font-size:1rem;background:#f97316;color:#fff;border:0;border-radius:999px;padding:12px 22px;cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,.15)}
 </style>
 </head>
 <body>
@@ -402,6 +408,25 @@ footer .prof{display:inline-flex;align-items:center;gap:8px;border:1px solid rgb
     <span class="profs"><a class="prof" id="link-painel" href="#">🔐 Professor · Escola JK</a><a class="prof" id="link-painel-ex" href="#">🧭 Professor · Modo Explorador</a></span>
   </div>
 </footer>
+<!-- 📲 Instalar no celular (PWA): só aparece no celular e quando o site ainda não está instalado -->
+<div class="pwa-inst"><button id="pwa-inst" type="button" hidden>📲 Instalar no celular</button></div>
+<script>
+(function () {
+  var b = document.getElementById("pwa-inst"), ev = null;
+  var cel = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+  var instalado = (window.matchMedia && matchMedia("(display-mode: standalone)").matches) || navigator.standalone;
+  if (!cel || instalado) return;
+  var ios = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+  window.addEventListener("beforeinstallprompt", function (e) { e.preventDefault(); ev = e; b.hidden = false; });
+  if (ios) b.hidden = false;
+  b.onclick = function () {
+    if (ev) { ev.prompt(); ev = null; b.hidden = true; return; }
+    alert(ios ? "No iPhone: toque no botão Compartilhar (o quadrado com a seta para cima, embaixo no Safari) e depois em “Adicionar à Tela de Início”."
+              : "No Android: toque nos três pontinhos do navegador e depois em “Instalar app” ou “Adicionar à tela inicial”.");
+  };
+})();
+</script>
+
 
 <script>
 /* ======== CONFIGURAÇÃO (editar aqui) ======== */
