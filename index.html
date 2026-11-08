@@ -408,7 +408,6 @@ const HORARIOS = [
   { dia: 4, ini: "09:00", t: "9º D" }, { dia: 4, ini: "13:30", t: "6º A" }, { dia: 4, ini: "15:00", t: "6º B" }
 ];
 const DURACAO = 75; // minutos
-const TESTE_ATE = Date.UTC(2026, 10, 8, 0, 34); // teste: finge segunda 7h40 até 21h34 de 07/11 (some sozinho)
 
 const AVISOS = [
   { ic: "🚀", tit: "Apostilas agora são digitais!", txt: "Neste 4º bimestre as missões são feitas no Portal da Informática, com correção na hora.", data: "4º bimestre" },
@@ -438,7 +437,6 @@ $("#link-explorador").href = PORTAL + "#/explorar/santos-dumont";
 $("#ano").textContent = new Date().getFullYear();
 
 function agoraBR() {
-  if (Date.now() < TESTE_ATE) return { dia: 1, m: 7 * 60 + 40 }; // teste temporário
   // horário de Curionópolis (UTC−3), mesmo se o aparelho estiver em outro fuso
   const d = new Date(Date.now() + (new Date().getTimezoneOffset() - 180) * 60000);
   return { dia: d.getDay(), m: d.getHours() * 60 + d.getMinutes() };
@@ -452,7 +450,7 @@ function desenharSemana() {
     html += `<div class="dia ${d === dia ? "hoje" : ""}"><h3>${EMO_DIA[d]} ${DIAS[d]}</h3>` +
       aulas.map((a, k) => {
         const i = min(a.ini), f = i + DURACAO, s = a.t[0];
-        let cls = d === dia ? (m >= f ? "ja" : m >= i ? "ag" : "") : "";
+        const cls = d === dia ? (m >= f ? "ja" : m >= i ? "ag" : "") : "";
         const tarde = i >= 12 * 60, antes = k ? min(aulas[k - 1].ini) >= 12 * 60 : null;
         const rot = antes === tarde ? "" : `<div class="turno ${tarde ? "tarde" : ""}">${tarde ? "🌇 Tarde" : "☀️ Manhã"}</div>`;
         return rot + `<div class="aula ${cls}" style="--cor:${CORES[s]};--bg:${FUNDOS[s]}"><span class="t">${fmt(i)}</span><span class="tu">${a.t}</span></div>`;
