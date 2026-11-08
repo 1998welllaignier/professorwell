@@ -29,6 +29,8 @@ h2.tit{font-size:clamp(26px,3.6vw,38px);line-height:1.15;color:var(--azul);font-
 h2.tit .emo{display:inline-block;transform:translateY(2px)}
 p.lead{color:var(--suave);font-size:17px;margin-top:8px;max-width:640px}
 .chip{display:inline-flex;align-items:center;gap:6px;background:var(--amarelo);color:#713f12;font-weight:700;font-size:13px;padding:6px 14px;border-radius:999px;transform:rotate(-1.5deg)}
+.chip{animation:balanca 2.6s ease-in-out infinite}
+@keyframes balanca{0%,100%{transform:rotate(-1.5deg)}25%{transform:rotate(2deg) translateY(-2px)}50%{transform:rotate(-1.5deg)}60%{transform:rotate(1deg)}}
 
 /* ---------- topo ---------- */
 header.nav{position:sticky;top:0;z-index:20;background:rgba(255,248,236,.86);backdrop-filter:blur(10px);border-bottom:1px solid transparent;transition:border-color .2s}
@@ -145,7 +147,12 @@ header.nav.sombra{border-color:var(--borda)}
 .combinados{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:28px}
 .comb{background:#fff;border:2px solid var(--borda);border-radius:var(--raio);padding:20px;text-align:center;transition:transform .18s}
 .comb:hover{transform:translateY(-4px)}
-.comb .ic{width:64px;height:64px;margin:0 auto 10px;border-radius:20px;display:grid;place-items:center;font-size:32px;background:var(--bg)}
+.comb .ic{width:64px;height:64px;margin:0 auto 10px;border-radius:20px;display:grid;place-items:center;font-size:32px;background:var(--bg);position:relative}
+.comb .ic::before{content:"";position:absolute;inset:0;border-radius:inherit;background:var(--bg);z-index:-1;animation:onda 2s ease-out infinite}
+.comb .ic{isolation:isolate}
+.comb:nth-child(2) .ic::before{animation-delay:.33s}.comb:nth-child(3) .ic::before{animation-delay:.66s}
+.comb:nth-child(4) .ic::before{animation-delay:1s}.comb:nth-child(5) .ic::before{animation-delay:1.33s}.comb:nth-child(6) .ic::before{animation-delay:1.66s}.comb:nth-child(7) .ic::before{animation-delay:.5s}.comb:nth-child(8) .ic::before{animation-delay:1.2s}
+@keyframes onda{0%{transform:scale(1);opacity:1}100%{transform:scale(1.45);opacity:0}}
 .comb h3{font-size:16px;color:var(--azul);line-height:1.25}
 .comb p{font-size:13.5px;color:var(--suave);margin-top:4px}
 
