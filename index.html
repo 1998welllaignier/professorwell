@@ -408,6 +408,7 @@ const HORARIOS = [
   { dia: 4, ini: "09:00", t: "9º D" }, { dia: 4, ini: "13:30", t: "6º A" }, { dia: 4, ini: "15:00", t: "6º B" }
 ];
 const DURACAO = 75; // minutos
+const TESTE_ATE = Date.UTC(2026, 10, 8, 0, 32); // teste do pulso: até 21h32 de 07/11 (some sozinho)
 
 const AVISOS = [
   { ic: "🚀", tit: "Apostilas agora são digitais!", txt: "Neste 4º bimestre as missões são feitas no Portal da Informática, com correção na hora.", data: "4º bimestre" },
@@ -450,7 +451,8 @@ function desenharSemana() {
     html += `<div class="dia ${d === dia ? "hoje" : ""}"><h3>${EMO_DIA[d]} ${DIAS[d]}</h3>` +
       aulas.map((a, k) => {
         const i = min(a.ini), f = i + DURACAO, s = a.t[0];
-        const cls = d === dia ? (m >= f ? "ja" : m >= i ? "ag" : "") : "";
+        let cls = d === dia ? (m >= f ? "ja" : m >= i ? "ag" : "") : "";
+        if (Date.now() < TESTE_ATE && d === 1 && k === 0) cls = "ag"; // teste temporário
         const tarde = i >= 12 * 60, antes = k ? min(aulas[k - 1].ini) >= 12 * 60 : null;
         const rot = antes === tarde ? "" : `<div class="turno ${tarde ? "tarde" : ""}">${tarde ? "🌇 Tarde" : "☀️ Manhã"}</div>`;
         return rot + `<div class="aula ${cls}" style="--cor:${CORES[s]};--bg:${FUNDOS[s]}"><span class="t">${fmt(i)}</span><span class="tu">${a.t}</span></div>`;
