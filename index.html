@@ -127,7 +127,8 @@ header.nav.sombra{border-color:var(--borda)}
 .aula.ja{opacity:.5}
 .turno{font-size:12px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;color:var(--suave);margin:2px 0 8px}
 .turno.tarde{border-top:2px dashed var(--borda);padding-top:12px;margin-top:12px}
-.aula.ag{outline:3px solid var(--laranja);outline-offset:2px}
+.aula.ag{outline:3px solid var(--laranja);outline-offset:2px;animation:pulso-aula 1.8s ease-in-out infinite}
+@keyframes pulso-aula{50%{box-shadow:0 0 0 8px rgba(249,115,22,.25);transform:scale(1.02)}}
 .legenda{margin-top:16px;font-size:13px;color:var(--suave);display:flex;flex-wrap:wrap;gap:16px}
 
 /* ---------- avisos ---------- */
