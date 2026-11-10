@@ -56,6 +56,10 @@ header.nav ul a:hover{opacity:1;color:#fde047}
 .btn-bco{background:#fff;color:var(--azul);box-shadow:0 5px 0 #c7d2fe}
 .btn-zap{background:#22c55e;color:#fff;box-shadow:0 5px 0 #15803d}
 .nav .btn{padding:9px 18px;font-size:14px}
+.nav-btns{display:flex;gap:10px;align-items:center}
+.btn-prof{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.6);box-shadow:none}
+.btn-prof:hover{background:rgba(255,255,255,.12);color:#fde047;border-color:#fde047}
+@media (max-width:420px){.nav .btn{padding:8px 12px;font-size:13px}.nav-btns{gap:6px}}
 
 /* ---------- hero ---------- */
 .hero{position:relative;padding:48px 0 90px;overflow:hidden}
@@ -252,7 +256,8 @@ footer .prof{display:inline-flex;align-items:center;gap:8px;border:1px solid rgb
       <li><a href="#professor">O professor</a></li>
       <li><a href="#contato">Contato</a></li>
     </ul>
-    <a class="btn btn-lar" href="#aluno">🎒 <span>Sou aluno</span></a>
+    <div class="nav-btns"><a class="btn btn-prof" href="https://portal.professorwell.com.br/#/painel" title="Painel do professor (só abre com a conta Google de professor)">🔐 <span>Professor</span></a>
+    <a class="btn btn-lar" href="#aluno">🎒 <span>Sou aluno</span></a></div>
   </div>
 </header>
 
