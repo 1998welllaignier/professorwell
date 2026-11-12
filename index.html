@@ -539,7 +539,7 @@ document.querySelectorAll(".revela").forEach(el => io.observe(el));
 <style>
 /* aparecem dentro da primeira seção (hero), nos cantos: embaixo à esquerda (sobe do chão) e no alto à direita (espia pela lateral) */
 .aluno-oi{position:absolute;z-index:3;pointer-events:none;filter:drop-shadow(0 4px 6px rgba(0,0,0,.18));transition:transform .9s cubic-bezier(.2,1.2,.4,1)}
-.aluno-oi .avatar-svg{display:block;width:110px;height:auto}
+.aluno-oi .avatar-svg{display:block;width:160px;height:auto}
 .aluno-oi.baixo{left:6px;bottom:-6px;transform:translateY(105%)}
 .aluno-oi.baixo.on{transform:translateY(30%)}
 .aluno-oi.lado{right:-6px;top:70px;transform:translateX(105%) rotate(-12deg)}
@@ -548,10 +548,10 @@ document.querySelectorAll(".revela").forEach(el => io.observe(el));
 .aluno-oi .av-aceno{transform-box:view-box;transform-origin:91px 80px;animation:aceno .5s ease-in-out infinite alternate}
 @keyframes aceno{from{transform:rotate(-14deg)}to{transform:rotate(16deg)}}
 .aluno-oi .balao{position:absolute;top:-4px;background:#fff;border:2px solid #1e3a8a;color:#1e3a8a;font:700 13px/1.2 Poppins,system-ui,sans-serif;padding:5px 10px;border-radius:14px;white-space:nowrap;opacity:0;transition:opacity .4s .5s}
-.aluno-oi.baixo .balao{left:84px}
-.aluno-oi.lado .balao{right:96px;transform:rotate(12deg)}
+.aluno-oi.baixo .balao{left:122px}
+.aluno-oi.lado .balao{right:140px;transform:rotate(12deg)}
 .aluno-oi.on .balao{opacity:1}
-@media (max-width:600px){.aluno-oi .avatar-svg{width:76px}.aluno-oi.baixo .balao{left:58px;font-size:11px}.aluno-oi.lado .balao{right:66px;font-size:11px}}
+@media (max-width:600px){.aluno-oi .avatar-svg{width:104px}.aluno-oi.baixo .balao{left:80px;font-size:11px}.aluno-oi.lado .balao{right:90px;font-size:11px}}
 @media (prefers-reduced-motion:reduce){.aluno-oi{display:none}}
 </style>
 <script src="https://portal.professorwell.com.br/js/podio.js" defer></script>
