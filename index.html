@@ -535,5 +535,41 @@ addEventListener("scroll", () => $("#topo").classList.toggle("sombra", scrollY >
 const io = new IntersectionObserver(es => es.forEach(e => e.isIntersecting && e.target.classList.add("on")), { threshold: .15 });
 document.querySelectorAll(".revela").forEach(el => io.observe(el));
 </script>
+<!-- 👋 alunos de uniforme de Curionópolis que aparecem de vez em quando nos cantos e dão tchauzinho (usa o avatar do portal) -->
+<style>
+.aluno-oi{position:fixed;bottom:-4px;z-index:15;pointer-events:none;transform:translateY(110%);transition:transform .9s cubic-bezier(.2,1.2,.4,1);filter:drop-shadow(0 4px 6px rgba(0,0,0,.18))}
+.aluno-oi.on{transform:translateY(32%)}
+.tema-on .aluno-oi.on{transform:translateY(0)}
+.aluno-oi .avatar-svg{display:block;width:96px;height:auto}
+.aluno-oi .av-aceno{transform-box:view-box;transform-origin:91px 80px;animation:aceno .5s ease-in-out infinite alternate}
+@keyframes aceno{from{transform:rotate(-14deg)}to{transform:rotate(16deg)}}
+.aluno-oi .balao{position:absolute;top:-6px;left:70px;background:#fff;border:2px solid #1e3a8a;color:#1e3a8a;font:700 13px/1.2 Poppins,system-ui,sans-serif;padding:5px 10px;border-radius:14px;white-space:nowrap;opacity:0;transition:opacity .4s .5s}
+.aluno-oi.on .balao{opacity:1}
+.aluno-oi.esq .balao{left:auto;right:70px}
+@media (max-width:600px){.aluno-oi .avatar-svg{width:70px}.aluno-oi .balao{font-size:11px;left:52px}.aluno-oi.esq .balao{right:52px}}
+@media (prefers-reduced-motion:reduce){.aluno-oi{display:none}}
+</style>
+<script src="https://portal.professorwell.com.br/js/podio.js" defer></script>
+<script defer>
+window.addEventListener("load",function(){
+  var P=window.PORTAL; if(!P||!P.avatar) return;
+  var CAB=["curto","espetado","cacheado","black","longo","coque","trancas","moicano","topete","careca"];
+  var FALAS=["Oi! 👋","Bora aprender! 💻","Olá! 😄","Tchau! 👋","Vem pra aula! 🎒"];
+  // nas margens laterais, para não cobrir os textos (com tema no ar, ficam acima dos enfeites dos cantos)
+  var LUGARES=[["left","dir"],["right","esq"]]; var vez=0;
+  function sorteia(n){return Math.floor(Math.random()*n)}
+  function mostrar(){
+    var lugar=LUGARES[vez++%LUGARES.length];
+    var a=Object.assign({},P.avatar.PADRAO,{tipo:sorteia(2)?"m":"f",pele:sorteia(6),cabelo:CAB[sorteia(CAB.length)],corCabelo:sorteia(4),acena:true});
+    var d=document.createElement("div"); d.className="aluno-oi "+lugar[1]; d.setAttribute("aria-hidden","true");
+    d.style[lugar[0]]="10px"; if(document.documentElement.classList.contains("tema-on")) d.style.bottom="110px";
+    d.innerHTML='<span class="balao">'+FALAS[sorteia(FALAS.length)]+'</span>'+P.avatar.svg(a,96);
+    document.body.appendChild(d);
+    requestAnimationFrame(function(){requestAnimationFrame(function(){d.classList.add("on")})});
+    setTimeout(function(){d.classList.remove("on");setTimeout(function(){d.remove()},1200)},5000);
+  }
+  setTimeout(mostrar,2500); setInterval(mostrar,14000);
+});
+</script>
 </body>
 </html>
