@@ -239,6 +239,19 @@ footer .prof{display:inline-flex;align-items:center;gap:8px;border:1px solid rgb
 }
 .pwa-inst{text-align:center;padding:0 16px 24px}
 #pwa-inst{font:inherit;font-weight:800;font-size:1rem;background:#f97316;color:#fff;border:0;border-radius:999px;padding:12px 22px;cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,.15)}
+
+/* 🎬 vídeo de apresentação do Portal (21/11/2026) — a miniatura só vira vídeo no clique (carrega o YouTube só quando a pessoa quer) */
+#video{padding:56px 0 64px}
+.vid{display:grid;grid-template-columns:1.25fr 1fr;gap:28px;align-items:center;margin-top:18px}
+.vid-play{position:relative;display:block;width:100%;aspect-ratio:16/9;border:0;padding:0;border-radius:20px;overflow:hidden;cursor:pointer;background:#0f172a;box-shadow:0 8px 0 var(--laranja),0 14px 30px rgba(30,58,138,.25)}
+.vid-play img{width:100%;height:100%;object-fit:cover;display:block;opacity:.92}
+.vid-play .pl{position:absolute;inset:0;margin:auto;width:84px;height:84px;border-radius:50%;background:var(--laranja);color:#fff;font-size:34px;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 0 var(--laranja-esc);transition:transform .15s}
+.vid-play:hover .pl{transform:scale(1.08)}
+.vid-play .dur{position:absolute;right:12px;bottom:12px;background:rgba(15,23,42,.85);color:#fff;font-weight:700;font-size:14px;border-radius:8px;padding:3px 9px}
+.vid iframe{width:100%;aspect-ratio:16/9;border:0;border-radius:20px;display:block;box-shadow:0 8px 0 var(--laranja)}
+.vid ul{margin:12px 0 0;padding-left:0;list-style:none;display:grid;gap:8px}
+.vid li{background:#fff;border:2px solid var(--borda);border-radius:14px;padding:9px 12px;font-size:15px}
+@media (max-width:820px){.vid{grid-template-columns:1fr}}
 </style>
 <!-- 🎉 temas das datas comemorativas (os mesmos do portal; ligam e desligam sozinhos pela data ou pelo botão 🎨 Tema do painel) -->
 <link rel="stylesheet" href="https://portal.professorwell.com.br/css/temas.css">
@@ -316,6 +329,34 @@ footer .prof{display:inline-flex;align-items:center;gap:8px;border:1px solid rgb
     <a class="outra-escola" id="link-explorador" href="#"><span class="oe-ic">🏫</span><span class="oe-txt">É da <strong>Escola Santos Dumont</strong>?<br>Entre no <strong>Modo Explorador</strong>: sem código, só o seu nome e o bichinho secreto 🤫</span><span class="oe-seta">→</span></a>
   </div>
 </section>
+<!-- ================= VÍDEO DE APRESENTAÇÃO ================= -->
+<section id="video">
+  <div class="cx">
+    <h2 class="tit"><span class="emo">🎬</span> Conheça o Portal da Informática</h2>
+    <p class="lead">Para famílias e alunos: em 3 minutos, veja como funcionam as aulas de Informática e como o aluno aprende no portal. Assista com o som ligado.</p>
+    <div class="vid">
+      <div id="vid-box"><button type="button" class="vid-play" id="vid-play" aria-label="Assistir ao vídeo: Conheça o Portal da Informática (3 min)">
+        <img src="https://i.ytimg.com/vi/lUbQ9RmXiBc/hqdefault.jpg" alt="" loading="lazy" width="480" height="360" onerror="this.remove()"><span class="pl" aria-hidden="true">▶</span><span class="dur" aria-hidden="true">3 min</span></button></div>
+      <div>
+        <p style="font-weight:800;color:var(--azul);margin:0">O que você vai ver:</p>
+        <ul>
+          <li>🔢 Como o aluno entra: só um código de 4 números, sem e-mail e sem senha</li>
+          <li>🎯 As missões: videozinho, leitura e “Onde eu uso isso?”</li>
+          <li>🖱️ Os simuladores e as tarefas em três níveis, com o robô Bit para ajudar</li>
+          <li>🏆 Os pontos, o rei da sala e o pódio no fim da aula</li>
+          <li>👀 Como o professor acompanha cada aluno e quem estuda em casa</li>
+          <li>🔒 A segurança: nome e notas só aparecem no painel do professor</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+document.getElementById("vid-play").addEventListener("click", function () {
+  document.getElementById("vid-box").innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/lUbQ9RmXiBc?autoplay=1&rel=0" title="Conheça o Portal da Informática" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>';
+});
+</script>
+
 <svg class="onda" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0 0h1440v20c-240 40-480 40-720 10S240 0 0 30z" fill="#1e3a8a"/></svg>
 
 <!-- ================= HORÁRIOS ================= -->
